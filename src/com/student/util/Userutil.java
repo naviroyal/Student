@@ -29,11 +29,11 @@ public class Userutil {
 	public String changePassword(CredentialsBean credentialsBean,String newPassword)
 	{
 		CredentialsBean cb=new CredentialsBean();
-		if(auth.authenticate(credentialsBean))
+		if(auth.authenticate(cb))
 		{
-			credentialsBean.setPassword(newPassword);
+			cb.setPassword(newPassword);
 			CredentialsDao cd = new CredentialsDao();
-			if(cd.updatePassword(credentialsBean)) return "S";
+			if(cd.updatePassword(cb)) return "S";
 		}
 		return "F";
 	}

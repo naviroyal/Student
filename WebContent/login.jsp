@@ -11,6 +11,7 @@
 	cb.setPassword(password);
 	Userutil uu = new Userutil();
 	String s = uu.login(cb);
+	System.out.println(uname+"gcchj");
 	if(s.equals("A")){
 		cb.setUserType(s);
 		session.setAttribute("bean", cb);

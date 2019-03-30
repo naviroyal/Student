@@ -88,19 +88,21 @@ public class CredentialsDao {
 	
 	public CredentialsBean findByID(String userId) {
 		CredentialsBean cb = new CredentialsBean();
-		
 		System.out.println(userId);
 		System.out.println("bsd");
 		try {
+			System.out.println(userId);
 			PreparedStatement ps = con.prepareStatement("select * from user_credentials where userid = ?");
+			System.out.println(userId);
 			ps.setString(1, userId);
 			ResultSet rs = ps.executeQuery();
-			while(rs.next()) {
+			if(rs.next()) {
 				cb.setUserId(rs.getString(1));
 				cb.setPassword(rs.getString(2));
 				cb.setUserType(rs.getString(3));
 				cb.setLoginStatus(rs.getInt(4));
 			}
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
