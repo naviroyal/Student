@@ -24,9 +24,10 @@ public class UserDao {
 		String pincode = profileBean.getPincode();
 		String mobileNo = profileBean.getMobileNo();
 		String emailId = profileBean.getEmailId();
+		String password=profileBean.getPassword();
 		try {
 			
-			ps = con.prepareStatement("insert into user_profile values(?,?,?,?, ?, ?, ?, ?, ?, ?, ?, ?)");
+			ps = con.prepareStatement("insert into user_profile values(?,?,?,?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
 			ps.setString(1, userId);
 			ps.setString(2, firstName);
 			ps.setString(3, lastName);
@@ -39,6 +40,7 @@ public class UserDao {
 			ps.setString(10, pincode);
 			ps.setString(11, mobileNo);
 			ps.setString(12, emailId);
+			ps.setString(13, password);
 			int a = ps.executeUpdate();
 			if(a>0) return "Success";
 			
@@ -82,8 +84,9 @@ public class UserDao {
 		String pincode = profileBean.getPincode();
 		String mobileNo = profileBean.getMobileNo();
 		String emailId = profileBean.getEmailId();
+		String password=profileBean.getPassword();
 		try {
-			ps = con.prepareStatement("update user_profile set first_name = ?, last_name = ?, date_of_birth = ?, gender = ?, street = ?, location =?, city =?, state=?, pincode=?, mobile_no=?, email_id=? where userid = ?");
+			ps = con.prepareStatement("update user_profile set first_name = ?, last_name = ?, date_of_birth = ?, gender = ?, street = ?, location =?, city =?, state=?, pincode=?, mobile_no=?, email_id=? password=? where userid = ?");
 			ps.setString(1, firstName);
 			ps.setString(2, lastName);
 			ps.setDate(3, dateOfBirth);
@@ -95,7 +98,8 @@ public class UserDao {
 			ps.setString(9, pincode);
 			ps.setString(10, mobileNo);
 			ps.setString(11, emailId);
-			ps.setString(12, userId);
+			ps.setString(13, userId);
+			ps.setString(12,password);
 			final int a = ps.executeUpdate();
 			if(a>0) return true;
 		} catch (SQLException e) {
@@ -126,6 +130,7 @@ public class UserDao {
 				cb.setPincode(rs.getString(10));
 				cb.setMobileNo(rs.getString(11));
 				cb.setEmailId(rs.getString(12));
+				cb.setPassword(rs.getString(13));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -154,6 +159,7 @@ public class UserDao {
 				cb.setPincode(rs.getString(10));
 				cb.setMobileNo(rs.getString(11));
 				cb.setEmailId(rs.getString(12));
+				cb.setPassword(rs.getString(13));
 				pb.add(cb);
 			}
 			return pb;

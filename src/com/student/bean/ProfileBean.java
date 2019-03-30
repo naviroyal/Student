@@ -6,6 +6,7 @@ public class ProfileBean {
 	private String userId;
 	private String firstName;
 	private String lastName;
+	private String password;
 	private Date dateOfBirth;
 	private String gender;
 	private String street;
@@ -87,6 +88,14 @@ public class ProfileBean {
 	}
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
+	}
+	public void setPassword(String password)
+	{
+		this.password=password;
+	}
+	public String getPassword()
+	{
+		return password;
 	}
 	
 }
