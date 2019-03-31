@@ -42,7 +42,8 @@
                     <div class="card">
                         <div class="card-header">Register</div>
                         <div class="card-body">
-                           <form name="my-form" onsubmit="return validform()" action="success.php" method="">
+                
+                           <form name="my-form" onsubmit="return validform()" action="register.jsp" method="POST">
                                 <div class="form-group row">
                                     <label for="fname" class="col-md-4 col-form-label text-md-right">First Name</label>
                                     <div class="col-md-6">
@@ -122,9 +123,9 @@
                                 </div>
                                 
                                     <div class="col-md-6 offset-md-4">
-                                        <a href="register.jsp"><button type="submit" class="btn btn-primary">
+                                        <button type="submit" class="btn btn-primary">
                                         Register
-                                        </button></a>
+                                        </button>
                                     </div>
                                 </div>
                             </form>

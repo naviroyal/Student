@@ -24,7 +24,7 @@
 		RequestDispatcher rd=request.getRequestDispatcher("teacher.jsp");  
 		rd.forward(request, response);//method may be include or forward  
 	}
-	else
+	else if(s.equals("S"))
 	{
 		cb.setUserType(s);
 		session.setAttribute("bean", cb);
