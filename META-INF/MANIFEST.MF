@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Student
+Bundle-SymbolicName: Student
+Bundle-Version: 1.0.0.qualifier
+Export-Package: com.student.bean,
+ com.student.dao,
+ com.student.util

@@ -5,6 +5,7 @@
 <% 
 	String uname = request.getParameter("email");
 	String password = request.getParameter("password");
+	//System.out.print(uname);
 	CredentialsBean cb = new CredentialsBean();
 	cb.setUserId(uname);
 	cb.setPassword(password);
@@ -23,7 +24,7 @@
 		RequestDispatcher rd=request.getRequestDispatcher("teacher.jsp");  
 		rd.forward(request, response);//method may be include or forward  
 	}
-	else if(s.equals("S"))
+	else
 	{
 		cb.setUserType(s);
 		session.setAttribute("bean", cb);
