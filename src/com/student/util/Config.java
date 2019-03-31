@@ -8,7 +8,7 @@ public class Config {
 	static {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/student", "root", "password");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/student", "navi", "password");
 			System.out.println("connected");
 		}
 		catch (ClassNotFoundException | SQLException e) {
