@@ -66,7 +66,7 @@
 							<div class="form-group row">
                                     <label for="dob" class="col-md-4 col-form-label text-md-right">Date Of Birth</label>
                                     <div class="col-md-6">
-                                        <input type="date" id="dob" class="form-control" name="dob">
+                                        <input type="text" id="dob" class="form-control" name="dob">
                                     </div>
                             </div>
 							

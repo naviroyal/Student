@@ -1,6 +1,5 @@
 package com.student.dao;
 
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,10 +11,10 @@ public class UserDao {
 	java.sql.Connection con = Config.getConnection();
 	public String createUser(ProfileBean profileBean) {
 		PreparedStatement ps;
-		String userId = profileBean.getUserId();
+		String userId = "navi12";
 		String firstName = profileBean.getFirstName();
 		String lastName = profileBean.getLastName();
-		Date dateOfBirth = profileBean.getDateOfBirth();
+		String dateOfBirth = profileBean.getDateOfBirth();
 		String gender = profileBean.getGender(); 
 		String street = profileBean.getStreet();
 		String location = profileBean.getLocation();
@@ -31,7 +30,7 @@ public class UserDao {
 			ps.setString(1, userId);
 			ps.setString(2, firstName);
 			ps.setString(3, lastName);
-			ps.setDate(4, dateOfBirth);
+			ps.setString(4, dateOfBirth);
 			ps.setString(5, gender);
 			ps.setString(6, street);
 			ps.setString(7, location);
@@ -75,7 +74,7 @@ public class UserDao {
 		String userId = profileBean.getUserId();
 		String firstName = profileBean.getFirstName();
 		String lastName = profileBean.getLastName();
-		Date dateOfBirth = profileBean.getDateOfBirth();
+		String dateOfBirth = profileBean.getDateOfBirth();
 		String gender = profileBean.getGender(); 
 		String street = profileBean.getStreet();
 		String location = profileBean.getLocation();
@@ -89,7 +88,7 @@ public class UserDao {
 			ps = con.prepareStatement("update user_profile set first_name = ?, last_name = ?, date_of_birth = ?, gender = ?, street = ?, location =?, city =?, state=?, pincode=?, mobile_no=?, email_id=? password=? where userid = ?");
 			ps.setString(1, firstName);
 			ps.setString(2, lastName);
-			ps.setDate(3, dateOfBirth);
+			ps.setString(3, dateOfBirth);
 			ps.setString(4, gender);
 			ps.setString(5, street);
 			ps.setString(6, location);
@@ -121,7 +120,7 @@ public class UserDao {
 				cb.setUserId(rs.getString(1));
 				cb.setFirstName(rs.getString(2));
 				cb.setLastName(rs.getString(3));
-				cb.setDateOfBirth(rs.getDate(4));
+				cb.setDateOfBirth(rs.getString(4));
 				cb.setGender(rs.getString(5));
 				cb.setStreet(rs.getString(6));
 				cb.setLocation(rs.getString(7));
@@ -150,7 +149,7 @@ public class UserDao {
 				cb.setUserId(rs.getString(1));
 				cb.setFirstName(rs.getString(2));
 				cb.setLastName(rs.getString(3));
-				cb.setDateOfBirth(rs.getDate(4));
+				cb.setDateOfBirth(rs.getString(4));
 				cb.setGender(rs.getString(5));
 				cb.setStreet(rs.getString(6));
 				cb.setLocation(rs.getString(7));

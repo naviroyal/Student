@@ -5,11 +5,11 @@
 <%@page import="java.sql.Date"%>
     
 <%
+		
 		String fname = request.getParameter("fname");
 		String lname = request.getParameter("lname");
 		String psw = request.getParameter("password");
 		String d = request.getParameter("dob");
-		Date dob = Date.valueOf(d);
 		String gender =request.getParameter("gender");
 		String street = request.getParameter("street");
 		String location = request.getParameter("location");
@@ -18,11 +18,13 @@
 		String pincode = request.getParameter("pincode");
 		String phone_number =request.getParameter("phone_number");
 		String email_address = request.getParameter("email_address");
+		String userId=request.getParameter("email_address");
 		ProfileBean profileBean = new ProfileBean();
+		profileBean.setUserId(userId);
 		profileBean.setFirstName(fname);
 		profileBean.setLastName(lname);
 		profileBean.setPassword(psw);
-		profileBean.setDateOfBirth(dob);
+		profileBean.setDateOfBirth(d);
 		profileBean.setGender(gender);
 		profileBean.setStreet(street);
 		profileBean.setLocation(location);

@@ -1,13 +1,12 @@
 package com.student.bean;
 
-import java.sql.Date;
 
 public class ProfileBean {
 	private String userId;
 	private String firstName;
 	private String lastName;
 	private String password;
-	private Date dateOfBirth;
+	private String dateOfBirth;
 	private String gender;
 	private String street;
 	private String location;
@@ -35,10 +34,10 @@ public class ProfileBean {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public Date getDateOfBirth() {
+	public String getDateOfBirth() {
 		return dateOfBirth;
 	}
-	public void setDateOfBirth(Date dateOfBirth) {
+	public void setDateOfBirth(String dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 	public String getGender() {
